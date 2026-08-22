@@ -1,8 +1,8 @@
 title: "VFD & Industrial Electronics Riyadh"
 email: "info@sgriee.com"
 description: "Sellers and Suppliers of Variable Frequency Drives, VFD panels, IGBT modules, and motor speed controllers in Riyadh, Saudi Arabia."
-url: "https://orakzai1956.github.io"
-baseurl: "/sgriee" # This tells Jekyll to prepend /sgriee to all internal links and pages!
+url: "https://sgriee.com"
+baseurl: "" 
 
 # Build settings
 markdown: kramdown
