@@ -1,0 +1,47 @@
+---
+layout: default
+title: "Products & VFD Systems"
+description: "Explore our range of Variable Frequency Drives, AC drives, VFD panels, and motor speed controllers available in Riyadh, Saudi Arabia."
+---
+
+<section class="products-archive" style="padding: 3rem 0;">
+  <div class="wrapper">
+    
+    <header style="text-align: center; margin-bottom: 3rem;">
+      <h1 style="font-size: 2.2rem; margin-bottom: 0.8rem; color: #1a1a1a;">Our VFD Products & Systems</h1>
+      <p style="font-size: 1.1rem; color: #555555; max-width: 650px; margin: 0 auto;">
+        High-performance Variable Frequency Drives, custom panels, and speed controllers built for industrial applications across Saudi Arabia and the Gulf.
+      </p>
+    </header>
+
+    <!-- Product Cards Grid -->
+    <div class="product-grid" style="display: grid; grid-template-columns: 1fr; gap: 2rem; @media (min-width: 768px) { grid-template-columns: repeat(2, 1fr); } @media (min-width: 992px) { grid-template-columns: repeat(3, 1fr); }">
+      
+      {% for product in site.products %}
+        <article class="product-card" style="background: #ffffff; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.02); display: flex; flex-direction: column;">
+          
+          {% if product.image %}
+            <div class="product-card-img" style="height: 200px; overflow: hidden;">
+              <img src="{{ product.image | relative_url }}" alt="{{ product.title }}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            </div>
+          {% endif %}
+          
+          <div class="product-card-body" style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1;">
+            <h2 style="font-size: 1.25rem; margin-bottom: 0.75rem;">
+              <a href="{{ product.url | relative_url }}" style="color: #1a1a1a; text-decoration: none;">{{ product.title }}</a>
+            </h2>
+            <p style="font-size: 0.95rem; color: #666666; line-height: 1.5; margin-bottom: 1.5rem; flex-grow: 1;">
+              {{ product.description | truncate: 120 }}
+            </p>
+            <a href="{{ product.url | relative_url }}" style="display: inline-block; background-color: #0056b3; color: #ffffff; padding: 0.6rem 1.2rem; border-radius: 4px; text-decoration: none; font-size: 0.9rem; font-weight: 600; text-align: center;">
+              View Details & Specs
+            </a>
+          </div>
+
+        </article>
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>

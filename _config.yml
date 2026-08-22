@@ -1,0 +1,40 @@
+title: "VFD & Industrial Electronics Riyadh"
+email: "info@sgriee.com"
+description: "Sellers and Suppliers of Variable Frequency Drives, VFD panels, IGBT modules, and motor speed controllers in Riyadh, Saudi Arabia."
+url: "https://sgriee.com/"
+baseurl: "" # Keep empty since you are using a custom domain at the root
+
+# Build settings
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# SEO & Geo-Targeting Defaults
+author:
+  name: "Khisal Iftikhar"
+  email: "info@sgriee.com"
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+sass:
+  style: compressed
+  sass_dir: _sass
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle
+  - vendor/cache
+
+# Collections Configuration for Products
+collections:
+  products:
+    output: true
+    permalink: /products/:name/

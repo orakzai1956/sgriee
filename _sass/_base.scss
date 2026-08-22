@@ -1,0 +1,38 @@
+// Mobile-First Base Resets
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-stack;
+  font-size: $base-font-size;
+  line-height: $line-height-base;
+  color: $text-color;
+  background-color: $background-color;
+  -webkit-font-smoothing: antialiased;
+}
+
+// Fluid Wrapper for Mobile Viewports
+.wrapper {
+  max-width: 100%;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+
+  // Scale up layout container cleanly on larger screens
+  @media (min-width: $screen-md) {
+    max-width: 720px;
+    padding: 0 2rem;
+  }
+
+  @media (min-width: $screen-lg) {
+    max-width: 960px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
