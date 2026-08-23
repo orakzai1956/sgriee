@@ -13,7 +13,7 @@
   background-color: #25d366; // Official WhatsApp green
   color: #ffffff;
   font-size: 0.9rem;
-  padding: 0.75rem 0; // Increased vertical height for mobile visibility
+  padding: 0.75rem 0; // Taller vertical height for mobile visibility
   
   @media (min-width: $screen-sm) {
     padding: 0.4rem 0; // Slimmer on desktop
@@ -51,11 +51,14 @@
       text-decoration: underline;
     }
 
-    // Professional Pulse / Glow Animation for WhatsApp Icon
     .whatsapp-icon {
       fill: #ffffff;
-      animation: whatsappPulse 2s infinite ease-in-out;
       display: inline-block;
+      
+      // ONLY animate/pulse on mobile screens (screens smaller than $screen-sm or 768px)
+      @media (max-width: 767px) {
+        animation: whatsappPulse 2s infinite ease-in-out;
+      }
     }
   }
 }
