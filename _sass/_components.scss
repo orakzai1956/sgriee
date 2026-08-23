@@ -54,12 +54,13 @@
     .whatsapp-icon {
       fill: #ffffff;
       display: inline-block;
-      
-      // ONLY animate/pulse on mobile screens (screens smaller than $screen-sm or 768px)
-      @media (max-width: 767px) {
-        animation: whatsappPulse 2s infinite ease-in-out;
-      }
     }
+
+    // ONLY animate/pulse the entire link (logo + number) on mobile screens
+    @media (max-width: 767px) {
+      animation: whatsappPulse 2s infinite ease-in-out;
+    }
+  }
   }
 }
 
