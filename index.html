@@ -8,45 +8,36 @@ description: "Your keyword-rich, high-performance meta description goes here. Op
   <!-- ... existing Hero Section ... -->
 
 <!-- STACKED IMAGES SECTION -->
-<section class="stacked-images-section">
+<!-- HORIZONTAL IMAGES SECTION -->
+<section class="horizontal-images-section">
   <div class="wrapper">
-    
-    <!-- Image 1 -->
-    <div class="stacked-image-wrapper">
-      <img 
-        src="{{ '/assets/images/1.jpg' | relative_url }}" 
-        alt="Description of image one for SEO and accessibility" 
-        class="stacked-image"
-        width="1200" // Provide intrinsic dimensions
-        height="800" // Provide intrinsic dimensions
-        loading="lazy" // Native lazy loading for speed!
-      >
+    <div class="image-grid-row">
+      
+      <!-- Image 1 -->
+      <div class="image-grid-item">
+        <img 
+          src="{{ '/assets/images/1.jpg' | relative_url }}" 
+          alt="Description of image one for SEO and accessibility" 
+          class="grid-image"
+          width="600" 
+          height="900" 
+          loading="lazy"
+        >
+      </div>
+
+      <!-- Image 2 -->
+      <div class="image-grid-item">
+        <img 
+          src="{{ '/assets/images/2.jpg' | relative_url }}" 
+          alt="Description of image two for SEO and accessibility" 
+          class="grid-image"
+          width="600"
+          height="900"
+          loading="lazy"
+        >
+      </div>
+
     </div>
-
-    <!-- Image 2 -->
-    <div class="stacked-image-wrapper">
-      <img 
-        src="{{ '/assets/images/2.jpg' | relative_url }}" 
-        alt="Description of image two for SEO and accessibility" 
-        class="stacked-image"
-        width="1200"
-        height="800"
-        loading="lazy"
-      >
-    </div>
-
-    <!-- Image 3 -->
-    <!-- <div class="stacked-image-wrapper">
-      <img 
-        src="{{ '/assets/images/image-03.webp' | relative_url }}" 
-        alt="Description of image three for SEO and accessibility" 
-        class="stacked-image"
-        width="1200"
-        height="800"
-        loading="lazy"
-      >
-    </div> -->
-
   </div>
 </section>
 
