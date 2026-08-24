@@ -10,14 +10,14 @@
 
 // 1. Top WhatsApp Bar
 .whatsapp-top-bar {
-  background-color: #1a1a1a; // Sleek dark industrial contrast (or use #991b1b for deep red)
+  background-color: #1a1a1a; // Sleek dark industrial background
   color: #ffffff;
-  font-size: 0.95rem;
-  padding: 1rem 0; // Taller vertical padding on mobile
-  border-bottom: 2px solid #25d366; // A crisp WhatsApp green accent line at the bottom
+  
+  // Mobile layout control: Taller bar with 10% spacing top/bottom logic
+  padding: 0.6rem 0; 
   
   @media (min-width: $screen-sm) {
-    padding: 0.4rem 0; // Slimmer on desktop
+    padding: 0.4rem 0; // Slimmer standard padding on desktop
   }
   
   .whatsapp-bar-content {
@@ -28,11 +28,12 @@
 
   .whatsapp-text {
     font-weight: 500;
-    color: #e2e8f0; // Soft light gray for readability
-    display: none; // Hidden on very small screens to save space
+    color: #e2e8f0;
+    display: none; 
     
     @media (min-width: $screen-sm) {
       display: inline;
+      font-size: 0.95rem;
     }
   }
 
@@ -41,14 +42,16 @@
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 0.6rem;
-    font-weight: 600;
-    font-size: 1.05rem; // Larger text for mobile readability
+    gap: 0.75rem;
+    font-weight: 700;
     margin: 0 auto;
+    
+    // Mobile scaling: Makes the content consume the target 80% visual weight of the row
+    font-size: 1.25rem; 
     
     @media (min-width: $screen-sm) {
       margin: 0;
-      font-size: 0.95rem;
+      font-size: 0.95rem; // Normal desktop text size
     }
 
     &:hover {
@@ -56,9 +59,15 @@
     }
 
     .whatsapp-icon {
-      fill: #25d366; // Making the logo itself WhatsApp green since the background is dark!
       display: inline-block;
       flex-shrink: 0;
+      width: 32px;  // Larger, prominent icon size on mobile
+      height: 32px;
+      
+      @media (min-width: $screen-sm) {
+        width: 20px;
+        height: 20px;
+      }
       
       // ONLY animate/pulse the logo on mobile screens
       @media (max-width: 767px) {
@@ -68,19 +77,19 @@
   }
 }
 
-// Keyframes for smooth attention-grabbing glow/pulse effect on the logo
+// Keyframes for smooth attention-grabbing glow/pulse effect on the original green logo
 @keyframes whatsappPulse {
   0% {
     transform: scale(1);
-    filter: drop-shadow(0 0 0 rgba(37, 211, 102, 0.7));
+    filter: drop-shadow(0 0 0 rgba(37, 211, 102, 0.4));
   }
   50% {
-    transform: scale(1.2);
-    filter: drop-shadow(0 0 12px rgba(37, 211, 102, 0.95));
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 10px rgba(37, 211, 102, 0.8));
   }
   100% {
     transform: scale(1);
-    filter: drop-shadow(0 0 0 rgba(37, 211, 102, 0.7));
+    filter: drop-shadow(0 0 0 rgba(37, 211, 102, 0.4));
   }
 }
 
