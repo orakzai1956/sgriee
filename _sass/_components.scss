@@ -194,36 +194,6 @@
   }
 }
 
-// --- STACKED IMAGES SECTION STYLES ---
-
-.stacked-images-section {
-  padding: 2rem 0;
-
-  @media (min-width: 768px) {
-    padding: 4rem 0;
-  }
-}
-
-.stacked-image-wrapper {
-  margin-bottom: 1.5rem;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  @media (min-width: 768px) {
-    margin-bottom: 2rem;
-  }
-}
-
-.stacked-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
 
 
 // --- SERVICES SECTION ---
@@ -331,5 +301,41 @@
         text-align: left;
       }
     }
+  }
+}
+
+
+// --- HORIZONTAL IMAGES SECTION (Side-by-Side) ---
+.horizontal-images-section {
+  padding: 2rem 0;
+
+  @media (min-width: 768px) {
+    padding: 4rem 0;
+  }
+
+  .image-grid-row {
+    display: grid;
+    grid-template-columns: 1fr; // Stacked on small mobile screens
+    gap: 1.5rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr); // Side-by-side two columns on tablets and PCs
+      gap: 2rem;
+      align-items: center;
+    }
+  }
+
+  .image-grid-item {
+    width: 100%;
+  }
+
+  .grid-image {
+    width: 100%;
+    height: auto;
+    max-height: 600px;     // Caps the vertical height so they don't stretch infinitely on large screens
+    object-fit: cover;     // Keeps the aspect ratio clean
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
 }
