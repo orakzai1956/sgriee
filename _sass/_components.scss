@@ -10,10 +10,11 @@
 
 // 1. Top WhatsApp Bar
 .whatsapp-top-bar {
-  background-color: #25d366; // Official WhatsApp green
+  background-color: #1a1a1a; // Sleek dark industrial contrast (or use #991b1b for deep red)
   color: #ffffff;
   font-size: 0.95rem;
-  padding: 1rem 0; // Significantly taller vertical padding on mobile
+  padding: 1rem 0; // Taller vertical padding on mobile
+  border-bottom: 2px solid #25d366; // A crisp WhatsApp green accent line at the bottom
   
   @media (min-width: $screen-sm) {
     padding: 0.4rem 0; // Slimmer on desktop
@@ -27,6 +28,7 @@
 
   .whatsapp-text {
     font-weight: 500;
+    color: #e2e8f0; // Soft light gray for readability
     display: none; // Hidden on very small screens to save space
     
     @media (min-width: $screen-sm) {
@@ -41,7 +43,7 @@
     align-items: center;
     gap: 0.6rem;
     font-weight: 600;
-    font-size: 1.05rem; // Slightly larger text for mobile readability
+    font-size: 1.05rem; // Larger text for mobile readability
     margin: 0 auto;
     
     @media (min-width: $screen-sm) {
@@ -54,7 +56,7 @@
     }
 
     .whatsapp-icon {
-      fill: #ffffff;
+      fill: #25d366; // Making the logo itself WhatsApp green since the background is dark!
       display: inline-block;
       flex-shrink: 0;
       
@@ -70,15 +72,15 @@
 @keyframes whatsappPulse {
   0% {
     transform: scale(1);
-    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0.7));
+    filter: drop-shadow(0 0 0 rgba(37, 211, 102, 0.7));
   }
   50% {
     transform: scale(1.2);
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.95));
+    filter: drop-shadow(0 0 12px rgba(37, 211, 102, 0.95));
   }
   100% {
     transform: scale(1);
-    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0.7));
+    filter: drop-shadow(0 0 0 rgba(37, 211, 102, 0.7));
   }
 }
 
