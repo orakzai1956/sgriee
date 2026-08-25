@@ -127,6 +127,104 @@
   text-decoration: none;
 }
 
+// 2. Top Phone Call Bar (Placed right below WhatsApp bar)
+.phone-top-bar {
+  background-color: #991b1b; // Rich brand red contrast (or switch to #f1f5f9 for a light gray transition)
+  color: #ffffff;
+  
+  // Mobile layout: Scaled to match ~80-85% of the WhatsApp bar's vertical scale
+  padding: 0.65rem 0; 
+  
+  @media (min-width: $screen-sm) {
+    padding: 0.4rem 0; // Standard slim desktop profile, matching WhatsApp desktop bar
+    background-color: #1a1a1a; // Optional: unify desktop bar colors or keep distinct
+  }
+  
+  .phone-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .phone-text {
+    font-weight: 500;
+    color: #f8fafc;
+    display: none; 
+    
+    @media (min-width: $screen-sm) {
+      display: inline;
+      font-size: 0.95rem;
+    }
+  }
+
+  .phone-link {
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    margin: 0 auto;
+    height: 100%;
+    
+    @media (min-width: $screen-sm) {
+      margin: 0;
+      font-size: 0.95rem;
+      height: auto;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    // Number text tracking ~90% vertical presence with clean bold font
+    span {
+      font-size: 1.25rem; 
+      line-height: 0.9;
+      letter-spacing: 0.5px;
+      
+      @media (min-width: $screen-sm) {
+        font-size: 0.95rem;
+        line-height: normal;
+        letter-spacing: normal;
+      }
+    }
+
+    .phone-icon {
+      display: inline-block;
+      flex-shrink: 0;
+      
+      // Sized to command ~90% height coverage on mobile
+      width: 32px;  
+      height: 32px;
+      
+      @media (min-width: $screen-sm) {
+        width: 18px;
+        height: 18px;
+      }
+      
+      // Subtle attention pulse for mobile call action
+      @media (max-width: 767px) {
+        animation: phonePulse 2s infinite ease-in-out;
+      }
+    }
+  }
+}
+
+// Keyframes for phone icon pulse effect
+@keyframes phonePulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
 // Mobile Nav Menu (Hidden by default, slides down when active)
 .site-nav {
   display: none;
