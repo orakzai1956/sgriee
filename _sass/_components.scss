@@ -129,15 +129,15 @@
 
 // 2. Top Phone Call Bar (Placed right below WhatsApp bar)
 .phone-top-bar {
-  background-color: #991b1b; // Rich brand red contrast (or switch to #f1f5f9 for a light gray transition)
+  background-color: #991b1b; // Crimson red background for both mobile and desktop
   color: #ffffff;
   
   // Mobile layout: Scaled to match ~80-85% of the WhatsApp bar's vertical scale
   padding: 0.65rem 0; 
   
   @media (min-width: $screen-sm) {
-    padding: 0.4rem 0; // Standard slim desktop profile, matching WhatsApp desktop bar
-    background-color: #1a1a1a; // Optional: unify desktop bar colors or keep distinct
+    padding: 0.4rem 0; // Standard slim desktop profile
+    background-color: #991b1b; // Explicitly locked to crimson on desktop as requested
   }
   
   .phone-bar-content {
@@ -177,7 +177,7 @@
       text-decoration: underline;
     }
 
-    // Number text tracking ~90% vertical presence with clean bold font
+    // Number text styling
     span {
       font-size: 1.25rem; 
       line-height: 0.9;
@@ -194,7 +194,7 @@
       display: inline-block;
       flex-shrink: 0;
       
-      // Sized to command ~90% height coverage on mobile
+      // Sized for mobile coverage
       width: 32px;  
       height: 32px;
       
