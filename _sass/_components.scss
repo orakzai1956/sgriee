@@ -13,11 +13,11 @@
   background-color: #1a1a1a; // Sleek dark industrial background
   color: #ffffff;
   
-  // Mobile layout control: Taller bar with 10% spacing top/bottom logic
-  padding: 0.6rem 0; 
+  // Mobile layout control: Increased vertical height by roughly 15% via padding adjustment
+  padding: 0.85rem 0; 
   
   @media (min-width: $screen-sm) {
-    padding: 0.4rem 0; // Slimmer standard padding on desktop
+    padding: 0.4rem 0; // Standard slim padding on desktop
   }
   
   .whatsapp-bar-content {
@@ -46,23 +46,37 @@
     font-weight: 700;
     margin: 0 auto;
     
-    // Mobile scaling: Makes the content consume the target 80% visual weight of the row
-    font-size: 1.25rem; 
+    // Explicit flex container configuration to control vertical proportions on mobile
+    height: 100%;
     
     @media (min-width: $screen-sm) {
       margin: 0;
-      font-size: 0.95rem; // Normal desktop text size
+      font-size: 0.95rem;
+      height: auto;
     }
 
     &:hover {
       text-decoration: underline;
     }
 
+    // Text wrapper or span targeting the number to achieve ~80% height coverage (10% top/bottom balance)
+    span {
+      font-size: 1.35rem; // Scaled to occupy roughly 80% vertical height relative to the bar
+      line-height: 0.8;
+      
+      @media (min-width: $screen-sm) {
+        font-size: 0.95rem;
+        line-height: normal;
+      }
+    }
+
     .whatsapp-icon {
       display: inline-block;
       flex-shrink: 0;
-      width: 32px;  // Larger, prominent icon size on mobile
-      height: 32px;
+      
+      // Sized to occupy roughly 90% vertical height (5% top/bottom balance)
+      width: 36px;  
+      height: 36px;
       
       @media (min-width: $screen-sm) {
         width: 20px;
@@ -77,7 +91,7 @@
   }
 }
 
-// Keyframes for smooth attention-grabbing glow/pulse effect on the original green logo
+// Keyframes for smooth attention-grabbing glow/pulse effect on the logo
 @keyframes whatsappPulse {
   0% {
     transform: scale(1);
@@ -85,7 +99,7 @@
   }
   50% {
     transform: scale(1.15);
-    filter: drop-shadow(0 0 10px rgba(37, 211, 102, 0.8));
+    filter: drop-shadow(0 0 12px rgba(37, 211, 102, 0.85));
   }
   100% {
     transform: scale(1);
