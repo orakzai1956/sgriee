@@ -131,15 +131,15 @@
 .phone-top-bar {
   background-color: #991b1b; // Crimson red background for both mobile and desktop
   color: #ffffff;
-  
-  // Mobile layout: Scaled to match ~80-85% of the WhatsApp bar's vertical scale
-  padding: 0.65rem 0; 
-  
+
+  // Mobile layout: Matched exactly to the WhatsApp bar vertical height and padding
+  padding: 0.85rem 0; 
+
   @media (min-width: $screen-sm) {
     padding: 0.4rem 0; // Standard slim desktop profile
-    background-color: #991b1b; // Explicitly locked to crimson on desktop as requested
+    background-color: #991b1b; // Explicitly locked to crimson on desktop
   }
-  
+
   .phone-bar-content {
     display: flex;
     justify-content: space-between;
@@ -150,7 +150,7 @@
     font-weight: 500;
     color: #f8fafc;
     display: none; 
-    
+
     @media (min-width: $screen-sm) {
       display: inline;
       font-size: 0.95rem;
@@ -166,7 +166,7 @@
     font-weight: 700;
     margin: 0 auto;
     height: 100%;
-    
+
     @media (min-width: $screen-sm) {
       margin: 0;
       font-size: 0.95rem;
@@ -177,35 +177,35 @@
       text-decoration: underline;
     }
 
-    // Number text styling
+    // Number text styling: Matched exactly to WhatsApp bar font size and line height
     span {
-      font-size: 1.25rem; 
-      line-height: 0.9;
-      letter-spacing: 0.5px;
-      
+      font-size: 1.55rem; 
+      line-height: 0.8;
+      letter-spacing: normal;
+      color: #ffffff; // Clean white on crimson background
+
       @media (min-width: $screen-sm) {
         font-size: 0.95rem;
         line-height: normal;
-        letter-spacing: normal;
       }
     }
 
     .phone-icon {
       display: inline-block;
       flex-shrink: 0;
-      
-      // Sized for mobile coverage
-      width: 32px;  
-      height: 32px;
-      
+
+      // Sized to match the WhatsApp icon proportions (36px x 36px)
+      width: 36px;  
+      height: 36px;
+
       @media (min-width: $screen-sm) {
         width: 18px;
         height: 18px;
       }
-      
-      // Subtle attention pulse for mobile call action
+
+      // Attention pulse for mobile call action
       @media (max-width: 767px) {
-        animation: phonePulse 2s infinite ease-in-out;
+        animation: phonePulse 1.5s infinite ease-in-out;
       }
     }
   }
@@ -215,12 +215,15 @@
 @keyframes phonePulse {
   0% {
     transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
   }
   50% {
-    transform: scale(1.12);
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
   }
   100% {
     transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
   }
 }
 
